@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Design Website</title>
+  <title>Design Website</title>
 
-	<link
-  rel="stylesheet"
-  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-  crossorigin="anonymous"
-/>
-<link
-  href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
-  rel="stylesheet"
-/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
 
-<style type="text/css">
-	
-:root {
-  --main-white: #f0f0f0;
-  --main-red: #be3144;
-  --main-blue: #45567d;
-  --main-gray: #303841;
-}
+  <style type="text/css">
+    :root {
+      --main-white: #f0f0f0;
+      --main-red: #be3144;
+      --main-blue: #45567d;
+      --main-gray: #303841;
+    }
 
-/* Base reset */
-* {
-  margin: 0;
-  padding: 0;
-}
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-/* box-sizing and font sizing */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+    /* box-sizing and font sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
 
-html {
-  box-sizing: border-box;
+    html {
+      box-sizing: border-box;
 
-  /* Set font size for easy rem calculations
+      /* Set font size for easy rem calculations
    * default document font size = 16px, 1rem = 16px, 100% = 16px
    * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
   */
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
 
-/* A few media query to set some font sizes at different screen sizes.
+    /* A few media query to set some font sizes at different screen sizes.
  * This helps automate a bit of responsiveness.
  * The trick is to use the rem unit for size values, margin and padding.
  * Because rem is relative to the document font size
@@ -59,386 +49,510 @@ html {
  * it will affect all properties using rem units for the values.
 */
 
-/* I am using the em unit for breakpoints
+    /* I am using the em unit for breakpoints
  * The calculation is the following
  * screen size divided by browser base font size
  * As an example: a breakpoint at 980px
  * 980px / 16px = 61.25em
 */
 
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-  html {
-    font-size: 60%;
-  }
-}
+    /* 1200px / 16px = 75em */
+    @media (max-width: 75em) {
+      html {
+        font-size: 60%;
+      }
+    }
 
-/* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
-  html {
-    font-size: 58%;
-  }
-}
+    /* 980px / 16px = 61.25em */
+    @media (max-width: 61.25em) {
+      html {
+        font-size: 58%;
+      }
+    }
 
-/* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
-  html {
-    font-size: 55%;
-  }
-}
+    /* 460px / 16px = 28.75em */
+    @media (max-width: 28.75em) {
+      html {
+        font-size: 55%;
+      }
+    }
 
-/* Base styles */
+    /* Base styles */
 
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* 18px */
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--main-white);
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      /* 18px */
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--main-white);
+      background-color: var(--main-blue);
+    }
 
-h1,
-h2 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  text-align: center;
-}
+    h1,
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      text-align: center;
+    }
 
-h1 {
-  font-size: 6rem;
-}
+    h1 {
+      font-size: 6rem;
+    }
 
-h2 {
-  font-size: 4.2rem;
-}
+    h2 {
+      font-size: 4.2rem;
+    }
 
-ul {
-  list-style: none;
-}
+    ul {
+      list-style: none;
+    }
 
-a {
-  text-decoration: none;
-  color: var(--main-white);
-}
+    a {
+      text-decoration: none;
+      color: var(--main-white);
+    }
 
-img {
-  display: block;
-  width: 100%;
-}
+    img {
+      display: block;
+      width: 100%;
+    }
 
-/* nav */
+    /* nav */
 
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--main-red);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
-}
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--main-red);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
 
-.nav-list {
-  display: flex;
-  margin-right: 2rem;
-}
+    .nav-list {
+      display: flex;
+      margin-right: 2rem;
+    }
 
-@media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
+    @media (max-width: 28.75em) {
+      .nav {
+        justify-content: center;
+      }
 
-  .nav-list {
-    margin: 0 1rem;
-  }
-}
+      .nav-list {
+        margin: 0 1rem;
+      }
+    }
 
-.nav-list a {
-  display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
-}
+    .nav-list a {
+      display: block;
+      font-size: 2.2rem;
+      padding: 2rem;
+    }
 
-.nav-list a:hover {
-  background: var(--main-blue);
-}
+    .nav-list a:hover {
+      background: var(--main-blue);
+    }
 
-/* Welcome section */
+    /* Welcome section */
 
-.welcome-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color:#121E6A;
-  /*background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);*/
-}
+    .welcome-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #121E6A;
+      /*background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);*/
+    }
 
-.welcome-section > p {
-  font-size: 3rem;
-  font-weight: 200;
-  font-style: italic;
-  color: yellow;
-}
+    .welcome-section>p {
+      font-size: 3rem;
+      font-weight: 200;
+      font-style: italic;
+      color: yellow;
+    }
 
-/* Projects section */
+    /* Projects section */
 
-.projects-section {
-  text-align: center;
-  padding: 10rem 2rem;
-  background: var(--main-blue);
-}
+    .projects-section {
+      text-align: center;
+      padding: 10rem 2rem;
+      height: 140vh;
+      background: var(--main-blue);
+    }
 
-.projects-section-header {
-  max-width: 640px;
-  margin: 0 auto 6rem auto;
-  border-bottom: 0.2rem solid var(--main-white);
-}
+    .projects-section-header {
+      max-width: 640px;
+      margin: 0 auto 6rem auto;
+      border-bottom: 0.2rem solid var(--main-white);
+    }
 
-@media (max-width: 28.75em) {
-  .projects-section-header {
-    font-size: 4rem;
-  }
-}
+    @media (max-width: 28.75em) {
+      .projects-section-header {
+        font-size: 4rem;
+      }
+    }
 
-/* "Automagic" image grid using no media queries */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
-}
+    /* "Automagic" image grid using no media queries */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-gap: 4rem;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      margin-bottom: 6rem;
+    }
 
-@media (max-width: 30.625em) {
-  .projects-section {
-    padding: 6rem 1rem;
-  }
+    @media (max-width: 30.625em) {
+      .projects-section {
+        padding: 6rem 1rem;
+      }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.project {
-  background: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-}
-#para
-{ color:#feb236;
-  font-size:1.3em;
-   
-}
-.code {
-  color:var(--main-gray);
-transition: color 0.3s ease-in;
-}
+    .project {
+      background: var(--main-gray);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 2px;
+    }
 
-.project:hover .code {
-  color:#feb236;
-  font-size:1.3em;
-}
+    #para {
+      color: #feb236;
+      font-size: 1.3em;
 
-.project-image {
-  height: calc(100% - 6.8rem);
-  width: 100%;
-  object-fit: cover;
-}
+    }
 
-.project-title {
-  font-size: 2rem;
-  padding: 2rem 0.5rem;
-}
+    .code {
+      color: var(--main-gray);
+      transition: color 0.3s ease-in;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 2px;
-}
+    .project:hover .code {
+      color: #feb236;
+      font-size: 1.3em;
+    }
 
-.btn-show-all {
-  font-size: 2rem;
-  background: var(--main-gray);
-  transition: background 0.3s ease-out;
-}
+    .project-image {
+      height: calc(100% - 6.8rem);
+      width: 100%;
+      object-fit: cover;
+    }
 
-.btn-show-all:hover {
-  background: var(--main-red);
-}
+    .project-title {
+      font-size: 2rem;
+      padding: 2rem 0.5rem;
+    }
 
-.btn-show-all:hover > i {
-  transform: translateX(2px);
-}
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+    }
 
-.btn-show-all > i {
-  margin-left: 10px;
-  transform: translateX(0);
-  transition: transform 0.3s ease-out;
-}
+    .btn-show-all {
+      font-size: 2rem;
+      background: var(--main-gray);
+      transition: background 0.3s ease-out;
+    }
 
-/* Contact section */
+    .btn-show-all:hover {
+      background: var(--main-red);
+    }
 
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 80vh;
-  padding: 0 2rem;
-  background: var(--main-gray);
-}
+    .btn-show-all:hover>i {
+      transform: translateX(2px);
+    }
 
-.contact-section-header > h2 {
-  font-size: 6rem;
-}
+    .btn-show-all>i {
+      margin-left: 10px;
+      transform: translateX(0);
+      transition: transform 0.3s ease-out;
+    }
 
-@media (max-width: 28.75em) {
-  .contact-section-header > h2 {
-    font-size: 4rem;
-  }
-}
+    /* Contact section */
 
-.contact-section-header > p {
-  font-style: italic;
-}
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 80vh;
+      padding: 0 2rem;
+      background: var(--main-gray);
+    }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 980px;
-  margin-top: 4rem;
-  flex-wrap: wrap;
-}
+    .contact-section-header>h2 {
+      font-size: 6rem;
+    }
 
-.contact-details {
-  font-size: 2.4rem;
-  text-shadow: 2px 2px 1px #1f1f1f;
-  transition: transform 0.3s ease-out;
-}
+    @media (max-width: 28.75em) {
+      .contact-section-header>h2 {
+        font-size: 4rem;
+      }
+    }
 
-.contact-details:hover {
-  transform: translateY(8px);
-}
+    .contact-section-header>p {
+      font-style: italic;
+    }
 
-/* Footer */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 980px;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+    }
 
-footer {
-  font-weight: 300;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2rem;
-  background: var(--main-gray);
-  border-top: 4px solid var(--main-red);
-}
+    .contact-details {
+      font-size: 2.4rem;
+      text-shadow: 2px 2px 1px #1f1f1f;
+      transition: transform 0.3s ease-out;
+    }
 
-footer > p {
-  margin: 2rem;
-}
+    .contact-details:hover {
+      transform: translateY(8px);
+    }
 
-footer i {
-  vertical-align: middle;
-}
+    /* Footer */
 
-@media (max-width: 28.75em) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+    footer {
+      font-weight: 300;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 2rem;
+      background: var(--main-gray);
+      border-top: 4px solid var(--main-red);
+    }
 
+    footer>p {
+      margin: 2rem;
+    }
 
-</style>
+    footer i {
+      vertical-align: middle;
+    }
 
+    @media (max-width: 28.75em) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
 
+    /* Slideshow */
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: relative;
+      width: 85%;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      background-color: #111111;
+    }
+
+    .slide {
+      width: 30%;
+      margin: auto;
+    }
+
+    .cursor {
+      cursor: pointer;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+      left: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .numberText {
+      color: #F2F2F2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: #FFFFFF;
+    }
+
+    .row:after {
+      content: left;
+      display: table;
+      clear: both;
+    }
+
+    .column {
+      background-color: #333333;
+      float: left;
+      width: 20%;
+    }
+
+    .demo {
+      opacity: 0.6;
+      width: 60%;
+    }
+
+    .active,
+    demo:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <noscript>Please use a browser that supports JavaScript</noscript>
 </head>
 
 
 <body>
 
-<!-- START NAV -->
+  <!-- START NAV -->
 
-<nav id="navbar" class="nav">
-  <ul class="nav-list">
-    <li>
-      <a href="#welcome-section">About</a>
-    </li>
-    <li>
-      <a href="#projects">Work</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-  </ul>
-</nav>
+  <nav id="navbar" class="nav">
+    <ul class="nav-list">
+      <li>
+        <a href="#welcome-section">About</a>
+      </li>
+      <li>
+        <a href="#projects">Work</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
 
-<!-- END NAV -->
+  <!-- END NAV -->
 
-<!-- START WELCOME SECTION -->
+  <!-- START WELCOME SECTION -->
 
-<section id="welcome-section" class="welcome-section">
-  <img src="13.png" width="100"  alt="project"/>
-</section>
+  <section id="welcome-section" class="welcome-section">
+    <img src="13.png" width="100" alt="project" />
+  </section>
 
-<!-- END WELCOME SECTION -->
+  <!-- END WELCOME SECTION -->
 
-<!-- START PROJECTS SECTION -->
+  <!-- START PROJECTS SECTION -->
 
-<section id="projects" class="projects-section">
-  <h2 class="projects-section-header">These are some of my Sketches</h2>
+  <section id="projects" class="projects-section">
+    <h2 class="projects-section-header">These are some of my Sketches</h2>
 
-  <div class="projects-grid">
+    <div class="container">
+      <!--Slides-->
+      <div class="mySlides">
+        <div class="numberText">1 / 5</div>
+        <a href="https://photos.app.goo.gl/dhrbghdpQbH9gUAg9">
+          <img class="slide" src="./IMG_20200406_165534.jpg">
+        </a>
+      </div>
+      <div class="mySlides">
+        <div class="numberText">2 / 5</div>
+        <a href="https://photos.app.goo.gl/eRjAfo3wJyR4VcN99">
+          <img class="slide" src="./IMG_20191112_145208.jpg">
+        </a>
+      </div>
+      <div class="mySlides">
+        <div class="numberText">3 / 5</div>
+        <a href="https://photos.app.goo.gl/P9bZYb8k9FX2SRxs5">
+          <img class="slide" src="./IMG_20191007_210550.jpg">
+        </a>
+      </div>
+      <div class="mySlides">
+        <div class="numberText">4 / 5</div>
+        <a href="https://photos.app.goo.gl/hwDNKU6uvsCnWUQ68">
+          <img class="slide" src="./IMG_20190928_142934.jpg">
+        </a>
+      </div>
+      <div class="mySlides">
+        <div class="numberText">5 / 5</div>
+        <a href="https://photos.app.goo.gl/Cap8jECuu5RqMoD9A">
+          <img class="slide" src="./IMG_20190930_184336.jpg">
+        </a>
+      </div>
 
-     <a href="https://photos.app.goo.gl/dhrbghdpQbH9gUAg9"> 
+      <!--Next and previous buttons-->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-     	<img  src="./IMG_20200406_165534.jpg" width="100"  alt="project"/>
-      
-      </a>
+      <!--Image text-->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
 
+      <!--Thumbnail images-->
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="./IMG_20200406_165534.jpg" onclick="currentSlide(1)" alt="IMG_20200406_165534.jpg">
+        </div>
 
-    <a href="https://photos.app.goo.gl/eRjAfo3wJyR4VcN99"> 
+        <div class="column">
+          <img class="demo cursor" src="./IMG_20191112_145208.jpg" onclick="currentSlide(2)" alt="IMG_20191112_145208.jpg">
+        </div>
 
-    	<img  src="./IMG_20191112_145208.jpg"  alt="project"/>
-      
-      </a>
+        <div class="column">
+          <img class="demo cursor" src="./IMG_20191007_210550.jpg" onclick="currentSlide(3)" alt="IMG_20191007_210550.jpg">
+        </div>
 
+        <div class="column">
+          <img class="demo cursor" src="./IMG_20190928_142934.jpg" onclick="currentSlide(4)" alt="IMG_20190928_142934.jpg">
+        </div>
 
-      <a href="https://photos.app.goo.gl/P9bZYb8k9FX2SRxs5"> 
+        <div class="column">
+          <img class="demo cursor" src="./IMG_20190930_184336.jpg" onclick="currentSlide(5)" alt="IMG_20190930_184336.jpg">
+        </div>
+      </div>
+    </div>
 
-    	<img  src="./IMG_20191007_210550.jpg"  alt="project"/>
-      
-      </a>
-
- 
-   <a href="https://photos.app.goo.gl/hwDNKU6uvsCnWUQ68"> 
-
-    	<img  src="./IMG_20190928_142934.jpg"  alt="project"/>
-      
-      </a>
-
-
-     <a href="https://photos.app.goo.gl/Cap8jECuu5RqMoD9A"> 
-
-    	<img  src="./IMG_20190930_184336.jpg"  alt="project"/>
-      
-      </a>
-
-      
     <!-- <a
       href="https://codepen.io/SUDEEPSHUKLA930/full/zYvBJMQ"
       target="_blank"
       class="project project-tile"
     > -->
-      <!-- <img
+    <!-- <img
         class="project-image"
         src="D:\\Design-Website\\IMG_20200406_165534.jpg"
         alt="project"/>
@@ -447,10 +561,10 @@ footer i {
         <span id="para">Page</span>
         
       </p> -->
-    
+
     <!-- s -->
-   
-   <!-- <a
+
+    <!-- <a
       href="https://codepen.io/freeCodeCamp/full/wGqEga"
       target="_blank"
       class="project project-tile"
@@ -482,27 +596,27 @@ footer i {
         <span class="code">&#47;&gt;</span>
       </p>
     </a>-->
-  </div>
+    </div>
 
-  <!-- <a
+    <!-- <a
     href="https://codepen.io/FreeCodeCamp/"
     class="btn btn-show-all"
     target="_blank"
     >Show all<i class="fas fa-chevron-right"></i
-  ></a> --> 
-</section>
+  ></a> -->
+  </section>
 
-<!-- END PROJECTS SECTION -->
+  <!-- END PROJECTS SECTION -->
 
-<!-- START CONTACT SECTION -->
+  <!-- START CONTACT SECTION -->
 
-<section id="contact" class="contact-section">
-  <div class="contact-section-header">
-    <h2>Let's work together...</h2>
-    <p>How do you take your coffee?</p>
-  </div>
-  <div class="contact-links">
-  <!--  <a
+  <section id="contact" class="contact-section">
+    <div class="contact-section-header">
+      <h2>Let's work together...</h2>
+      <p>How do you take your coffee?</p>
+    </div>
+    <div class="contact-links">
+      <!--  <a
       href="https://facebook.com/freecodecamp"
       target="_blank"
       class="btn contact-details"
@@ -521,32 +635,68 @@ footer i {
       class="btn contact-details"
       ><i class="fab fa-twitter"></i> Twitter</a
     > -->
-    <a href="mailto:sakshi.jaiswal3570@gmail.com" class="btn contact-details"
-      ><i class="fas fa-at"></i> Send a mail</a
-    >
-    <a href="tel:+919696872391" class="btn contact-details"
-      ><i class="fas fa-mobile-alt"></i> Call me</a
-    >
-  </div>
-</section>
+      <a href="mailto:sakshi.jaiswal3570@gmail.com" class="btn contact-details"><i class="fas fa-at"></i> Send a
+        mail</a>
+      <a href="tel:+919696872391" class="btn contact-details"><i class="fas fa-mobile-alt"></i> Call me</a>
+    </div>
+  </section>
 
-<!-- END CONTACT SECTION -->
+  <!-- END CONTACT SECTION -->
 
-<!-- START FOOTER SECTION -->
+  <!-- START FOOTER SECTION -->
 
-<footer>
-  <!-- <p>
+  <footer>
+    <!-- <p>
     
   </p>
   <p>
     &copy; Created for SUDEEP SHUKLA -->
-<!--     <a href="https://www.freecodecamp.com/" target="_blank"
+    <!--     <a href="https://www.freecodecamp.com/" target="_blank"
       >freeCodeCamp <i class="fab fa-free-code-camp"></i
     ></a> -->
-  </p>
-</footer>
+    </p>
+  </footer>
 
-<!-- END FOOTER SECTION -->
+  <!-- END FOOTER SECTION -->
 
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
 </body>
+
 </html>
